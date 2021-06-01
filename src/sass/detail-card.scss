@@ -1,0 +1,194 @@
+@import '~/sass/common';
+
+.detail-slider {
+  background: #F5F5F5;
+
+  &__wrapper {
+    position: fixed;
+    left: 0;
+    top: 124px;
+    width: calc(50vw);
+    height: 720px;
+    max-height: 80vh;
+
+  }
+
+  &__item {
+    height: 720px;
+    width: calc(100%);
+    max-height: 80vh;
+    object-fit: cover;
+  }
+}
+
+.detail-card {
+  margin-top: 124px;
+  padding-left: 50%;
+
+  &__buttons {
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+
+    .button:first-of-type {
+      background: #0D0F13
+    }
+  }
+}
+
+.sub-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    margin-right: 12px;
+  }
+}
+
+.main-info {
+  .half:not(:nth-child(even)) {
+    padding-right: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+
+    color: #010101;
+    margin-bottom: 16px;
+  }
+
+  &__cost {
+    margin-bottom: 30px;
+  }
+}
+
+.appointment {
+  margin-top: 60px;
+  margin-bottom: 20px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__row {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__seams {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__seam {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    p:not(:last-of-type) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.options {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__text {
+    p:not(:last-of-type) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.components {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.component {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+
+  &__text {
+    margin-left: 12px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+}
+
+.characteristics {
+  margin-bottom: 60px;
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    border-bottom: 2px solid rgba(1, 1, 1, 0.2);
+  }
+
+  &__answer {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      margin-left: 6px;
+    }
+  }
+}
+
+.cases {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  .docs:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+}
+
+.reviews {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__main {
+    display: flex;
+  }
+}
