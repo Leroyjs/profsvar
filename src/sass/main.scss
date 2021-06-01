@@ -159,8 +159,6 @@
   &__tabs {
     margin-top: 50px;
   }
-
-
 }
 
 .case {
@@ -300,7 +298,7 @@
     line-height: 140%;
     /* identical to box height, or 20px */
 
-    color: #009A3C;
+    color: $subColor;
 
     margin-bottom: 30px;
   }
@@ -326,7 +324,7 @@
     font-size: 14px;
     line-height: 140%;
 
-    color: #009A3C;
+    color: $subColor;
     margin-bottom: 60px;
     display: inline-block;
   }
@@ -371,7 +369,8 @@
 
 .map {
   background: #0D0F13;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
 
   &__title {
@@ -393,12 +392,13 @@
   }
 
   .scrollbar-thumb {
-    background-color: #009A3C;
+    background-color: $subColor;
     border-radius: 0;
   }
 
   &__info {
     display: flex;
+    padding-bottom: 40px;
   }
 
   &__info-item {
@@ -407,11 +407,16 @@
 
   &__item {
     display: flex;
-    padding: 12px 0;
+    padding: 12px 20px;
+    margin: 0 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
   }
 
   &__scroll-box {
-    height: 304px;
+    height: 604px;
     overflow: auto;
   }
 
@@ -496,3 +501,14 @@
   }
 }
 
+.map__marker {
+  background: $subColor;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  color: $white;
+}
