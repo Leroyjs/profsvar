@@ -12,14 +12,14 @@
 <body>
   <header class="main-header main-padding">
     <nav class="main-header__nav">
-      <img src="./media/logo.svg" alt="" class="main-header__logo">
+      <a href="/"><img src="./media/logo.svg" alt="" class="main-header__logo"></a>
       <ul class="main-header__ul">
-        <li class="main-header__li"><a href="" class="main-header__link link text">О компании</a></li>
-        <li class="main-header__li"><a href="" class="main-header__link link text">Кейсы</a></li>
-        <li class="main-header__li"><a href="" class="main-header__link link text">Продукция</a></li>
-        <li class="main-header__li"><a href="" class="main-header__link link text">Отзывы</a></li>
-        <li class="main-header__li"><a href="" class="main-header__link link text">Rehm</a></li>
-        <li class="main-header__li"><a href="" class="main-header__link link text">Контакты</a></li>
+        <li class="main-header__li"><a href="#about" class="main-header__link link text">О компании</a></li>
+        <li class="main-header__li"><a href="#cases" class="main-header__link link text">Кейсы</a></li>
+        <li class="main-header__li"><a href="#carriages" class="main-header__link link text">Продукция</a></li>
+        <li class="main-header__li"><a href="#reviews" class="main-header__link link text">Отзывы</a></li>
+        <li class="main-header__li"><a href="#rehm" class="main-header__link link text">Rehm</a></li>
+        <li class="main-header__li"><a href="#footer" class="main-header__link link text">Контакты</a></li>
       </ul>
     </nav>
     <div class="sub-nav">
@@ -29,6 +29,7 @@
   </header>
   <main class="main-content">
     <section class="">
+      <div id="langing-slider" class="ancor"></div>
       <div class="langing-slider main-padding">
         <div class="langing-slider__slide-wrapper">
           <div class="langing-slider__slide">
@@ -78,6 +79,7 @@
       </div>
     </section>
     <section class="carriages">
+      <div id="carriages"  class="ancor"></div>
       <h2 class="h2 main-padding">Каретки</h2>
       <div class="docs main-padding carriages__docs">
         <a href="" class="docs__item link link_grey text text_grey-color">Прайс</a>
@@ -88,14 +90,14 @@
           <div class="filters">
             <h5 class="filters__title text text_grey-color">Движение каретки</h5>
             <div class="filters__main">
-              <label class="filters__item">
+              <label class="filters__item text">
                 <input type="radio" name="movement" class="filters__hidden-input" value="on-wheels">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
                 На колёсах
               </label>
-              <label class="filters__item">
+              <label class="filters__item text">
                 <input type="radio" name="movement" value="on-rail" class="filters__hidden-input">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
@@ -107,14 +109,14 @@
           <div class="filters">
             <h5 class="filters__title text text_grey-color">Движение каретки</h5>
             <div class="filters__main">
-              <label class="filters__item">
+              <label class="filters__item text">
                 <input type="radio" name="movement" class="filters__hidden-input" value="on-wheels">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
                 На колёсах
               </label>
-              <label class="filters__item">
+              <label class="filters__item text">
                 <input type="radio" name="movement" value="on-rail" class="filters__hidden-input">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
@@ -130,17 +132,17 @@
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-                fill="#009A3C" />
+                fill="#010101" fill-opacity="0.4"/>
             </svg>
             <svg class="catalog-slider__arrow catalog-slider__arrow_right" width="81" height="16" viewBox="0 0 81 16"
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-                fill="#009A3C" />
+                fill="#010101" fill-opacity="0.4"/>
             </svg>
           </div>
           <div class="catalog-slider__main">
-            <a href="" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide">
               <div class="catalog-slide__photo">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +166,7 @@
                 </p>
               </div>
             </a>
-            <a href="" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide">
               <div class="catalog-slide__photo">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +190,79 @@
                 </p>
               </div>
             </a>
-            <a href="" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide">
+              <div class="catalog-slide__photo">
+                <div class="catalog-slide__more">
+                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
+                  </svg>
+                  <span class="catalog-slide__more-text text">Подробнее</span>
+                </div>
+              </div>
+              <div class="catalog-slide__text">
+                <h3 class="catalog-slide__title">
+                  Сварочная каретка <br>
+                  Profsvar Basic DUO
+                </h3>
+                <span class="catalog-slide__cost">
+                  250 000 ₽
+                </span>
+                <p class="text catalog-slide__desc">
+                  Сварочная каретка <br>
+                  на колёсах без механизма <br>
+                  колебаний
+                </p>
+              </div>
+            </a>
+            <a href="/detail-card.html" class="catalog-slide">
+              <div class="catalog-slide__photo">
+                <div class="catalog-slide__more">
+                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
+                  </svg>
+                  <span class="catalog-slide__more-text text">Подробнее</span>
+                </div>
+              </div>
+              <div class="catalog-slide__text">
+                <h3 class="catalog-slide__title">
+                  Сварочная каретка <br>
+                  Profsvar Basic DUO
+                </h3>
+                <span class="catalog-slide__cost">
+                  250 000 ₽
+                </span>
+                <p class="text catalog-slide__desc">
+                  Сварочная каретка <br>
+                  на колёсах без механизма <br>
+                  колебаний
+                </p>
+              </div>
+            </a>
+            <a href="/detail-card.html" class="catalog-slide">
+              <div class="catalog-slide__photo">
+                <div class="catalog-slide__more">
+                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
+                  </svg>
+                  <span class="catalog-slide__more-text text">Подробнее</span>
+                </div>
+              </div>
+              <div class="catalog-slide__text">
+                <h3 class="catalog-slide__title">
+                  Сварочная каретка <br>
+                  Profsvar Basic DUO
+                </h3>
+                <span class="catalog-slide__cost">
+                  250 000 ₽
+                </span>
+                <p class="text catalog-slide__desc">
+                  Сварочная каретка <br>
+                  на колёсах без механизма <br>
+                  колебаний
+                </p>
+              </div>
+            </a>            
+            <a href="/detail-card.html" class="catalog-slide">
               <div class="catalog-slide__photo">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,6 +291,7 @@
       </div>
     </section>
     <section class="cases">
+      <div id="cases" class="ancor"></div>
       <h2 class="h2 main-padding">Кейсы</h2>
       <ul class="tabs cases__tabs">
         <li class="tabs__li main-padding">
@@ -262,17 +337,17 @@
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-            fill="#009A3C" />
+            fill="#010101" fill-opacity="0.4"/>
         </svg>
         <svg class="tabs__arrow tabs__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-            fill="#009A3C" />
+            fill="#010101" fill-opacity="0.4"/>
         </svg>
       </div>
       <div class="cases__main case main-padding">
-        <div class="case__title">Сварка угловых соединений</div>
+        <div class="case__title h3">Сварка угловых соединений</div>
         <div class="case__main">
           <div class="case__text">
             <span class="case__text-title">Задача</span>
@@ -327,6 +402,7 @@
       </div>
     </section>
     <section class="benefit__wrapper main-padding">
+      <div id="benefit" class="ancor"></div>
       <div class="benefit main-padding">
         <div class="benefit__title-block">
           <h2 class="benefit__title h3">
@@ -406,6 +482,7 @@
       </div>
     </section>
     <section class="about main-padding">
+      <div id="about" class="ancor"></div>
       <div class="half about__half">
         <span class="about__title">О компании</span>
         <p class="about__main-text h3">
@@ -420,8 +497,8 @@
       <div class="half">
         <span class="about__title">Достижения</span>
         <div class="about__achievements">
-          <div class="about__achievements-item">
-            <div class="about__main-text text_green-color about__number">
+          <div class="about__achievements-item half">
+            <div class="about__main-text text_green-color about__number h3">
               200<div class="plus">+</div>
             </div>
             <div class="about__item-desc text">
@@ -429,8 +506,8 @@
               реализовано
             </div>
           </div>
-          <div class="about__achievements-item">
-            <div class="about__main-text text_green-color about__number">
+          <div class="about__achievements-item half">
+            <div class="about__main-text text_green-color about__number h3">
               200<div class="plus">+</div>
             </div>
             <div class="about__item-desc text">
@@ -438,8 +515,8 @@
               реализовано
             </div>
           </div>
-          <div class="about__achievements-item">
-            <div class="about__main-text text_green-color about__number">
+          <div class="about__achievements-item half">
+            <div class="about__main-text text_green-color about__number h3">
               200<div class="plus">+</div>
             </div>
             <div class="about__item-desc text">
@@ -447,8 +524,8 @@
               реализовано
             </div>
           </div>
-          <div class="about__achievements-item">
-            <div class="about__main-text text_green-color about__number">
+          <div class="about__achievements-item half">
+            <div class="about__main-text text_green-color about__number h3">
               200<div class="plus">+</div>
             </div>
             <div class="about__item-desc text">
@@ -460,6 +537,7 @@
       </div>
     </section>
     <section class="map__wrapper main-padding">
+      <div id="map-section" class="ancor"></div>
       <div class="half">
         <h2 class="h4 text_green-color map__title">Географи продаж</h2>
         <p class="h3 map__text">
@@ -470,7 +548,7 @@
         </p>
       </div>
       <div class="map">
-        <div class="half">
+        <div class="half  map__info">
           <div class="map__list city-list">
             <div class="city-list__info main-padding">
               <div class="half h4 city-list__info-item">
@@ -578,12 +656,11 @@
             </div>
           </div>
         </div>
-        <div id='map' class="half">
-
-        </div>
+        <div id='map' class="half"></div>
       </div>
     </section>
     <section class="reviews">
+      <div id="reviews" class="ancor"></div>
       <h2 class="h2 reviews__title main-padding">Отзывы</h2>
       <ul class="tabs reviews__tabs">
         <li class="tabs__li main-padding">
@@ -631,13 +708,13 @@
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-            fill="#009A3C" />
+            fill="#010101" fill-opacity="0.4"/>
         </svg>
         <svg class="tabs__arrow tabs__arrow_right" id="reviews__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-            fill="#009A3C" />
+            fill="#010101" fill-opacity="0.4"/>
         </svg>
       </div>
       <div class="reviews__main reviews__main_active main-padding" id="review-1">
@@ -727,7 +804,7 @@
           </button>
         </div>
         <div class="buttons__sub-button">
-          <a href="" class="scroll-top">
+          <a href="#langing-slider" class="scroll-top">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.29289 0.292892C7.68342 -0.0976315 8.31658 -0.0976314 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928933 8.07107C0.538408 7.68054 0.538408 7.04738 0.928933 6.65685L7.29289 0.292892ZM7 23L7 1L9 1L9 23L7 23Z" fill="white" fill-opacity="0.2"/>
             </svg>
@@ -739,6 +816,7 @@
       </div>
     </section>
     <section class="rehm main-padding">
+      <div id="rehm" class="ancor"></div>
       <div class="half">
         <h2 class="h3 rehm__title">
           Мы являемся официальным дилером компании Rehm
@@ -756,16 +834,16 @@
       </div>
     </section>
   </main>
-  <footer class="footer main-padding">
+  <footer id="footer" class="footer main-padding">
     <div class="footer__main">
       <div class="half  footer__column">
         <div class="half">
           <h3 class="h4 footer__title text_grey-color">Офис</h3>
-          <div class="footer__text">
+          <a href="https://yandex.ru/maps/54/yekaterinburg/house/ulitsa_konstruktorov_5/YkkYcQ5hQUwAQFtsfXRydXtiYw==/?ll=60.791897%2C56.834718&z=17.7" class="footer__text footer__link">
             Конструкторов 5 <br>
             620007 Екатеринбург<br>
             Сведловская область
-          </div>
+          </a>
         </div>
         <div class="half">
           <h3 class="h4 footer__title text_grey-color">Контакты</h3>
@@ -779,8 +857,8 @@
         <div class="half">
           <h3 class="h4 footer__title text_grey-color">Мы в социальных сетях</h3>
           <div class="footer__text">
-            <a href="" class="footer__link">Youtube</a><br>
-            <a href="" class="footer__link">Instagram</a>
+            <a href="" class="footer__link footer__link_yt">Youtube</a><br>
+            <a href="" class="footer__link footer__link_inst">Instagram</a>
           </div>
         </div>
         <div class="half">

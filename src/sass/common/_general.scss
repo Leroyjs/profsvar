@@ -76,7 +76,8 @@
 .main-header {
   background: $white;
   width: 100%;
-  height: 84px;
+  min-height: 84px;
+  height: rubber(84);
   position: fixed;
   top: 0;
   left: 0;
@@ -85,8 +86,14 @@
   justify-content: space-between;
   z-index: 100;
 
+  &__logo {
+    min-width: 220px;
+    width: rubber(220);
+  }
+
   &__nav {
     display: flex;
+    align-items: center;
   }
 
   &__ul {
@@ -99,6 +106,9 @@
 }
 
 .sub-nav {
+  display: flex;
+  align-items: center;
+
   &__link {
     margin-left: 60px;
   }
@@ -164,11 +174,17 @@
 
 section {
   margin-bottom: 140px;
+  position: relative;
+}
+
+.ancor {
+  position: absolute;
+  top: rubber(-84);
 }
 
 .h2 {
   font-weight: 500;
-  font-size: 80px;
+  font-size: rubber(80);
   line-height: 110%;
   /* identical to box height, or 88px */
 
@@ -298,6 +314,17 @@ section {
 
   &__arrow {
     cursor: pointer;
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      path {
+        fill-opacity: 1;
+        fill: $subColor
+      }
+    }
   }
 }
 
@@ -311,8 +338,6 @@ section {
 }
 
 .footer {
-
-
   &__title {
     margin-bottom: 60px;
     min-height: 1em;
@@ -328,6 +353,29 @@ section {
     line-height: 120%;
 
     color: #010101;
+    transition: .3s;
+
+    &:hover {
+      color: $subColor;
+    }
+
+    &_inst {
+      transition: .3s;
+      background: #010101;
+      background-image: linear-gradient(90deg, #010101, #010101);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &:hover {
+        background-image: linear-gradient(90deg, #F48529, #515BD4);
+      }
+    }
+
+    &_yt {
+      &:hover {
+        color: #F60606;
+      }
+    }
   }
 
   &__main {
@@ -349,5 +397,53 @@ section {
 
   &__sub {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .main-header {
+    min-height: none;
+    height: 84px;
+
+    &__logo {
+      min-width: none;
+      width: 220px;
+    }
+  }
+
+  .ancor {
+    top: -84px;
+  }
+
+  .h2 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header {
+    &__li {
+      margin-left: 20px;
+    }
+  }
+
+  .sub-nav {
+    &__link {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .text {
+    font-size: 15px;
+  }
+
+  .h4 {
+    font-size: 13px;
+  }
+
+  .main-padding {
+    padding: 0 20px;
   }
 }

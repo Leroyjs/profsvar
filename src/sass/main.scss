@@ -24,9 +24,9 @@
   &__slide-title {
     position: absolute;
     left: 40px;
-    bottom: 80px;
+    bottom: rubber(80);
     font-weight: 500;
-    font-size: 60px;
+    font-size: rubber(60);
     line-height: 110%;
     /* or 66px */
 
@@ -36,7 +36,8 @@
   }
 
   &__slide-wrapper {
-    height: 630px;
+    min-height: 630px;
+    height: calc(100vh - 200px);
     width: 100%;
   }
 
@@ -64,6 +65,10 @@
 
 .catalog-slide {
   padding: 0 10px;
+
+  &:first-of-type {
+    padding-left: 40px;
+  }
 
   &__photo {
     height: 600px;
@@ -145,6 +150,17 @@
 .catalog-slider {
   &__arrow {
     cursor: pointer;
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      path {
+        fill-opacity: 1;
+        fill: $subColor
+      }
+    }
   }
 
   &__arrows {
@@ -171,7 +187,6 @@
 
   &__title {
     font-weight: 500;
-    font-size: 40px;
     line-height: 110%;
     /* identical to box height, or 44px */
 
@@ -221,7 +236,7 @@
 
   &__arrow {
     position: absolute;
-    background: #FFFFFF;
+    background: $white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -232,6 +247,7 @@
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
+    transition: .3s;
 
     &_right {
       right: 60px;
@@ -239,6 +255,19 @@
 
     &_left {
       left: 60px;
+    }
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      background-color: $subColor;
+
+      path {
+        fill: $white;
+        fill-opacity: 1;
+      }
     }
   }
 }
@@ -331,7 +360,6 @@
 
   &__main-text {
     font-weight: 500;
-    font-size: 40px;
     line-height: 110%;
   }
 
@@ -352,8 +380,8 @@
     display: flex;
     flex-wrap: wrap;
 
-    &-item {
-      margin-right: calc(50% - 120px);
+    &-item:not(:nth-child(1n+3)) {
+      // margin-right: calc(50% - 120px);
       margin-bottom: 70px;
     }
   }
@@ -369,9 +397,12 @@
 
 .map {
   background: #0D0F13;
-  padding-top: 40px;
-  padding-bottom: 40px;
   display: flex;
+
+  &__info {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 
   &__title {
     margin-bottom: 60px;
@@ -410,6 +441,7 @@
     padding: 12px 20px;
     margin: 0 20px;
     cursor: pointer;
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.08);
     }
@@ -470,7 +502,10 @@
   }
 
   &__main {
-    height: 760px;
+    cursor: pointer;
+    min-height: 760px;
+    height: calc(100vh - 200px);
+
   }
 }
 
@@ -486,6 +521,21 @@
   &__text {
     margin-left: 12px;
     color: rgba(255, 255, 255, 0.4);
+    transition: color .3s;
+  }
+
+  path {
+    transition: .3s;
+  }
+
+  &:hover {
+    .scroll-top__text {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    path {
+      fill-opacity: 1;
+    }
   }
 }
 
@@ -511,4 +561,21 @@
   border-radius: 50%;
   position: absolute;
   color: $white;
+}
+
+@media screen and (max-width: 1600px) {
+  .langing-slider {
+    &__slide-title {
+      bottom: 80px;
+      font-size: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .catalog-slide {
+    &:first-of-type {
+      padding-left: 20px;
+    }
+  }
 }

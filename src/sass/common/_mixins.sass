@@ -99,3 +99,6 @@
 
 @function font($fontName)
 	@return url('#{tmpPath()}/fonts/#{$fontName}')
+
+@function rubber($px)
+	@return #{$px/1600*100}vw 

@@ -22,7 +22,7 @@
 }
 
 .detail-card {
-  margin-top: 124px;
+  margin-top: rubber(124);
   padding-left: 50%;
 
   &__buttons {
@@ -33,7 +33,11 @@
     width: 100%;
 
     .button:first-of-type {
-      background: #0D0F13
+      background: #0D0F13;
+
+      &:hover {
+        background: #252526;
+      }
     }
   }
 }
@@ -50,6 +54,21 @@
 
   &__img {
     margin-right: 12px;
+  }
+
+  span,
+  path {
+    transition: .3s;
+  }
+
+  &:hover {
+    span {
+      color: #010101;
+    }
+
+    path {
+      fill-opacity: 1;
+    }
   }
 }
 
