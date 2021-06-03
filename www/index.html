@@ -10,6 +10,30 @@
 </head>
 
 <body>
+  <div class="burger-menu">
+    <ul class="burger-menu__ul">
+      <li class="burger-menu__li"><a href="#about" class="burger-menu__link link">О компании</a></li>
+      <li class="burger-menu__li"><a href="#cases" class="burger-menu__link link">Кейсы</a></li>
+      <li class="burger-menu__li"><a href="#carriages" class="burger-menu__link link">Продукция</a></li>
+      <li class="burger-menu__li"><a href="#reviews" class="burger-menu__link link">Отзывы</a></li>
+      <li class="burger-menu__li"><a href="#rehm" class="burger-menu__link link">Rehm</a></li>
+      <li class="burger-menu__li"><a href="#footer" class="burger-menu__link link">Контакты</a></li>
+    </ul>
+    <div class="burger-menu__bottom-block">
+      <div class="half">
+        <a href="" class="burger-menu__bottom-text">8 800 300 06 23</a>
+      </div>
+      <div class="half">
+        <a href="" class="burger-menu__bottom-text">info@profsvar.ru</a>
+      </div> 
+      <button class="button half">
+        Связаться с нами
+      </button>
+      <button class="button button_green half">
+        Демонстрация
+      </button>
+    </div>
+  </div>
   <header class="main-header main-padding">
     <nav class="main-header__nav">
       <a href="/"><img src="./media/logo.svg" alt="" class="main-header__logo"></a>
@@ -25,6 +49,11 @@
     <div class="sub-nav">
       <a href="" class="link link_green sub-nav__link sub-nav__link_tel text text_green-color">8 800 300 06 23</a>
       <a href="" class="link sub-nav__link text">EN</a>
+      <div class="burger">
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+      </div>
     </div>
   </header>
   <main class="main-content">
@@ -72,7 +101,8 @@
               Связаться с нами
             </button>
             <button class="button button_green">
-              Записаться на демонстрацию
+              <span class="tabs_desk">Записаться на демонстрацию</span>
+              <span class="tabs_mobile">Демонстрация</span>
             </button>
           </div>
         </div>
@@ -128,17 +158,25 @@
         </div>
         <div class="catalog-slider">
           <div class="catalog-slider__arrows main-padding">
-            <svg class="catalog-slider__arrow catalog-slider__arrow_left" width="81" height="16" viewBox="0 0 81 16"
+            <svg class="catalog-slider__arrow catalog-slider__arrow_left catalog-slider_desk" width="81" height="16" viewBox="0 0 81 16"
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
                 fill="#010101" fill-opacity="0.4"/>
             </svg>
-            <svg class="catalog-slider__arrow catalog-slider__arrow_right" width="81" height="16" viewBox="0 0 81 16"
+            <svg class="catalog-slider__arrow catalog-slider__arrow_right catalog-slider_desk" width="81" height="16" viewBox="0 0 81 16"
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
                 fill="#010101" fill-opacity="0.4"/>
+            </svg>
+            <svg  class="catalog-slider__arrow catalog-slider__arrow_left catalog-slider_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+            </svg>
+            <div class="catalog-slider__numbers catalog-slider_mobile">
+            </div>
+            <svg class="catalog-slider__arrow catalog-slider__arrow_right catalog-slider_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
             </svg>
           </div>
           <div class="catalog-slider__main">
@@ -293,7 +331,7 @@
     <section class="cases">
       <div id="cases" class="ancor"></div>
       <h2 class="h2 main-padding">Кейсы</h2>
-      <ul class="tabs cases__tabs">
+      <ul class="tabs tabs_desk cases__tabs">
         <li class="tabs__li main-padding">
           <a href="" class="tabs__link link link_grey text text_grey-color" data-tab-id="0">
             Сварка стыков трубного
@@ -333,48 +371,59 @@
         </li>
       </ul>
       <div class="tabs__arrows main-padding">
-        <svg class="tabs__arrow tabs__arrow_left" width="81" height="16" viewBox="0 0 81 16" fill="none"
+        <svg class="tabs__arrow tabs_desk tabs__arrow_left" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
             fill="#010101" fill-opacity="0.4"/>
         </svg>
-        <svg class="tabs__arrow tabs__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
+        <svg class="tabs__arrow tabs_desk tabs__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
             fill="#010101" fill-opacity="0.4"/>
+        </svg>
+        <svg  class="tabs__arrow tabs__arrow_left tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+        </svg>
+        <div class="tabs__numbers tabs_mobile"></div>
+        <svg class="tabs__arrow tabs__arrow_right tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
         </svg>
       </div>
       <div class="cases__main case main-padding">
         <div class="case__title h3">Сварка угловых соединений</div>
         <div class="case__main">
           <div class="case__text">
-            <span class="case__text-title">Задача</span>
-            <div id="case-task" class="text text_grey-color case__text-block">
-              <p>
-                При сварке угловых швов жидкий металл стремится стекать на нижнюю плоскость. Поэтому сварку таких швов в
-                нижнем положении лучше производить «в лодочку»,
-                а изделие располагать так, чтобы шлак
-                не затекал на металл перед дугой
-              </p>
-              <p>
-                Однако не всегда возможно установить
-                деталь в нужное положение.
-              </p>
+            <div class="case__block">
+              <span class="case__text-title">Задача</span>
+              <div id="case-task" class="text text_grey-color case__text-block">
+                <p>
+                  При сварке угловых швов жидкий металл стремится стекать на нижнюю плоскость. Поэтому сварку таких швов в
+                  нижнем положении лучше производить «в лодочку»,
+                  а изделие располагать так, чтобы шлак
+                  не затекал на металл перед дугой
+                </p>
+                <p>
+                  Однако не всегда возможно установить
+                  деталь в нужное положение.
+                </p>
+              </div>
             </div>
-            <span class="case__text-title text_green-color">Решение</span>
-            <div id="case-solution" class="text case__text-block">
-              <p>
-                При сварке углового шва, нижняя плоскость которого расположена горизонтально, возможен непровар вершины
-                угла или одной из кромок. Непровар может образоваться на нижнем листе, если начинать сварку с
-                вертикального листа,
-                так как в этом случае расплавленный металл стечет на недостаточно нагретую поверхность нижнего листа.
-                Поэтому сварку таких швов следует начинать, зажигая дугу на нижней плоскости в точке А, и вести электрод
-              </p>
-            </div>
-            <div class="docs case__doc">
-              <a id="case-doc" href="" class="docs__item link link_grey text text_grey-color">Скачать кейс</a>
+            <div class="case__block">
+              <span class="case__text-title text_green-color">Решение</span>
+              <div id="case-solution" class="text case__text-block">
+                <p>
+                  При сварке углового шва, нижняя плоскость которого расположена горизонтально, возможен непровар вершины
+                  угла или одной из кромок. Непровар может образоваться на нижнем листе, если начинать сварку с
+                  вертикального листа,
+                  так как в этом случае расплавленный металл стечет на недостаточно нагретую поверхность нижнего листа.
+                  Поэтому сварку таких швов следует начинать, зажигая дугу на нижней плоскости в точке А, и вести электрод
+                </p>
+              </div>
+              <div class="docs case__doc">
+                <a id="case-doc" href="" class="docs__item link link_grey text text_grey-color">Скачать кейс</a>
+              </div>
             </div>
           </div>
           <div class="case__gallery-wrapper case-gallery__wrapper">
@@ -393,9 +442,15 @@
               </svg>
             </div>
             <div class="case-gallery">
-              <img class="case-gallery__slide" src='../media/case-slider/1.jpg'>
-              <img class="case-gallery__slide" src='../media/case-slider/1.jpg'>
-              <img class="case-gallery__slide" src='../media/case-slider/1.jpg'>
+              <div class="case-gallery__slide">
+                <img class="" src='../media/case-slider/1.jpg'>
+              </div>
+              <div class="case-gallery__slide">
+                <img class="" src='../media/case-slider/1.jpg'>
+              </div>
+              <div class="case-gallery__slide">
+                <img class="" src='../media/case-slider/1.jpg'>
+              </div>
             </div>
           </div>
         </div>
@@ -538,7 +593,7 @@
     </section>
     <section class="map__wrapper main-padding">
       <div id="map-section" class="ancor"></div>
-      <div class="half">
+      <div class="half map__info-half">
         <h2 class="h4 text_green-color map__title">Географи продаж</h2>
         <p class="h3 map__text">
           <span class="text_green-color">Profsvar</span> осуществляет <br>
@@ -546,6 +601,7 @@
           по всей Российской Федерации
           и за ее пределами
         </p>
+        <div class="button button_green map__button_mobile">Посмотреть список городов и стран</div>
       </div>
       <div class="map">
         <div class="half  map__info">
@@ -662,7 +718,7 @@
     <section class="reviews">
       <div id="reviews" class="ancor"></div>
       <h2 class="h2 reviews__title main-padding">Отзывы</h2>
-      <ul class="tabs reviews__tabs">
+      <ul class="tabs reviews__tabs tabs_desk">
         <li class="tabs__li main-padding">
           <a href="" class="tabs__link link link_grey text text_grey-color" data-tab-id="1">
             ООО «Теплоэнергопром»
@@ -704,17 +760,24 @@
         </li>
       </ul>
       <div class="tabs__arrows main-padding">
-        <svg class="tabs__arrow tabs__arrow_left" id="reviews__arrow_left" width="81" height="16" viewBox="0 0 81 16" fill="none"
+        <svg class="tabs__arrow tabs_desk tabs__arrow_left" id="reviews__arrow_left" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
             fill="#010101" fill-opacity="0.4"/>
         </svg>
-        <svg class="tabs__arrow tabs__arrow_right" id="reviews__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
+        <svg class="tabs__arrow tabs_desk tabs__arrow_right" id="reviews__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
             fill="#010101" fill-opacity="0.4"/>
+        </svg>
+        <svg  class="tabs__arrow tabs__arrow_left tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+        </svg>
+        <div class="tabs__numbers tabs_mobile"></div>
+        <svg class="tabs__arrow tabs__arrow_right tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
         </svg>
       </div>
       <div class="reviews__main reviews__main_active main-padding" id="review-1">
@@ -800,7 +863,8 @@
             Связаться с нами
           </button>
           <button class="button button_green">
-            Записаться на демонстрацию
+            <span class="tabs_desk">Записаться на демонстрацию</span>
+            <span class="tabs_mobile">Демонстрация</span>
           </button>
         </div>
         <div class="buttons__sub-button">
@@ -817,7 +881,7 @@
     </section>
     <section class="rehm main-padding">
       <div id="rehm" class="ancor"></div>
-      <div class="half">
+      <div class="half rehm__column_left">
         <h2 class="h3 rehm__title">
           Мы являемся официальным дилером компании Rehm
           в Свердловской области
@@ -871,14 +935,14 @@
       </div>
     </div>
     <div class="footer__sub">
-      <div class="fourth fourth">
+      <div class="fourth footer__logo">
         <img src="./media/logo.svg" alt="" class="">
       </div>
-      <div class="half text text_grey-color">
+      <div class="half text text_grey-color footer__cop">
         © ООО Профсвар, 2021 <br>
         Профессиональное сварочное оборудование и комплектующие.
       </div>
-      <div class="fourth">
+      <div class="footer__doc">
         <div class="docs">
           <a href="" class="docs__item link link_grey text text_grey-color">Прайс</a>
           <a href="" class="docs__item link link_grey text text_grey-color">Презентация</a>

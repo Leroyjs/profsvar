@@ -17,19 +17,55 @@ window.addEventListener('DOMContentLoaded', () => {
 
   (function initCatalogSlider() {
     const _catalogSlider = document.querySelector('.catalog-slider__main');
-    const _arrowRight = document.querySelector('.catalog-slider__arrow_right');
-    const _arrowLeft = document.querySelector('.catalog-slider__arrow_left');
+    const countOfcatalogSliderItem =
+      _catalogSlider.querySelectorAll('.catalog-slide').length;
+    const _arrowRight = document.querySelectorAll(
+      '.catalog-slider__arrow_right'
+    );
+    const _numbers = document.querySelector('.catalog-slider__numbers');
+    const _arrowLeft = document.querySelectorAll('.catalog-slider__arrow_left');
     const flktyCatalogSlider = new Flickity(_catalogSlider, {
       // options
       cellAlign: 'center',
       contain: true
     });
-    _arrowRight.addEventListener('click', () => {
+    chengeNumber(0);
+    flktyCatalogSlider.on('change', index => {
+      chengeNumber(index);
+    });
+    _arrowRight[0].addEventListener('click', () => {
       flktyCatalogSlider.next();
     });
-    _arrowLeft.addEventListener('click', () => {
+    _arrowLeft[0].addEventListener('click', () => {
       flktyCatalogSlider.previous();
     });
+    _arrowRight[1].addEventListener('click', () => {
+      flktyCatalogSlider.next();
+    });
+    _arrowLeft[1].addEventListener('click', () => {
+      flktyCatalogSlider.previous();
+    });
+    function chengeNumber(activeIndex) {
+      _numbers.innerHTML = '';
+      for (let i = activeIndex - 2; i <= activeIndex + 2; i++) {
+        const span = document.createElement('span');
+        span.classList.add('catalog-slider__numbers-item');
+        if (activeIndex === i) {
+          span.classList.add('catalog-slider__numbers-item_active');
+        }
+        if (i >= 0 && i < countOfcatalogSliderItem) {
+          span.addEventListener('click', () => {
+            flktyCatalogSlider.select(i);
+          });
+          if (i < 10) {
+            span.innerText = '0' + (i + 1);
+          } else {
+            span.innerText = i + 1;
+          }
+        }
+        _numbers.append(span);
+      }
+    }
   })();
 
   (function initCaseSlider() {
@@ -38,9 +74,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const _arrowLeft = document.querySelector('.case-gallery__arrow_left');
     const flktyCaseSlider = new Flickity(_catalogSlider, {
       // options
-      cellAlign: 'left'
-      // contain: true,
+      // cellAlign: 'center',
+      fullscreen: true,
+      lazyLoad: 2,
+      groupCells: 1,
+      imagesLoaded: true
     });
+    setTimeout(() => {
+      flktyCaseSlider.resize();
+    }, 2000);
     _arrowRight.addEventListener('click', () => {
       flktyCaseSlider.next();
     });
@@ -68,9 +110,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     (function initCaseTabs() {
       const _tabs = document.querySelector('.tabs');
-      const _arrowRight = document.querySelector('.tabs__arrow_right');
-      const _arrowLeft = document.querySelector('.tabs__arrow_left');
-      initTabs(_tabs, _arrowRight, _arrowLeft, () =>
+      const _arrowRight = document.querySelectorAll(
+        '.cases .tabs__arrow_right'
+      );
+      const _arrowLeft = document.querySelectorAll('.cases .tabs__arrow_left');
+      const _numbers = document.querySelector('.cases .tabs__numbers');
+      initTabs(_tabs, _arrowRight, _arrowLeft, _numbers, () =>
         setCase(fakeJSONForCases, flktyCaseSlider)
       );
     })();
@@ -80,19 +125,54 @@ window.addEventListener('DOMContentLoaded', () => {
     alwaysShowTracks: true
   });
 
-  function initTabs(_tabs, _arrowRight, _arrowLeft, handler) {
+  function initTabs(_tabs, _arrowRight, _arrowLeft, _numbers, handler) {
     const _tabsItems = _tabs.querySelectorAll('.tabs__link');
-
     const flktyTabs = new Flickity(_tabs, {
       // options
       cellAlign: 'center',
       contain: true
     });
-    _arrowRight.addEventListener('click', () => {
+    chengeNumber(0);
+    flktyTabs.on('change', index => {
+      chengeNumber(index);
+      handler && handler(_tabsItems[flktyTabs.selectedIndex].dataset.tabId);
+    });
+    function chengeNumber(activeIndex) {
+      _numbers.innerHTML = '';
+      for (let i = activeIndex - 2; i <= activeIndex + 2; i++) {
+        const span = document.createElement('span');
+        span.classList.add('tabs__numbers-item');
+        if (activeIndex === i) {
+          span.classList.add('tabs__numbers-item_active');
+        }
+        if (i >= 0 && i < _tabs.querySelectorAll('.tabs__li').length) {
+          span.addEventListener('click', () => {
+            flktyTabs.select(i);
+          });
+          if (i < 10) {
+            span.innerText = '0' + (i + 1);
+          } else {
+            span.innerText = i + 1;
+          }
+        }
+        _numbers.append(span);
+        console.log(i);
+      }
+    }
+    console.log(_arrowRight);
+    _arrowRight[0].addEventListener('click', () => {
       flktyTabs.next();
       handler && handler(_tabsItems[flktyTabs.selectedIndex].dataset.tabId);
     });
-    _arrowLeft.addEventListener('click', () => {
+    _arrowLeft[0].addEventListener('click', () => {
+      flktyTabs.previous();
+      handler && handler(_tabsItems[flktyTabs.selectedIndex].dataset.tabId);
+    });
+    _arrowRight[1].addEventListener('click', () => {
+      flktyTabs.next();
+      handler && handler(_tabsItems[flktyTabs.selectedIndex].dataset.tabId);
+    });
+    _arrowLeft[1].addEventListener('click', () => {
       flktyTabs.previous();
       handler && handler(_tabsItems[flktyTabs.selectedIndex].dataset.tabId);
     });
@@ -352,9 +432,14 @@ window.addEventListener('DOMContentLoaded', () => {
   (function initReviewsSlider() {
     (function initReviwesTabs() {
       const _tabs = document.querySelector('.reviews__tabs');
-      const _arrowRight = document.querySelector('#reviews__arrow_right');
-      const _arrowLeft = document.querySelector('#reviews__arrow_left');
-      initTabs(_tabs, _arrowRight, _arrowLeft, setReview);
+      const _arrowRight = document.querySelectorAll(
+        '.reviews .tabs__arrow_right'
+      );
+      const _arrowLeft = document.querySelectorAll(
+        '.reviews .tabs__arrow_left'
+      );
+      const _numbers = document.querySelector('.reviews .tabs__numbers');
+      initTabs(_tabs, _arrowRight, _arrowLeft, _numbers, setReview);
     })();
     function setReview(id) {
       const _reviews = document.querySelectorAll('.reviews__main');
@@ -439,6 +524,15 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
+  })();
+  (function initBurger() {
+    const _burger = document.querySelector('.burger');
+    const _menu = document.querySelector('.burger-menu');
+
+    _burger.addEventListener('click', () => {
+      _menu.classList.toggle('burger-menu_active');
+      _burger.classList.toggle('burger_active');
+    });
   })();
 });
 
