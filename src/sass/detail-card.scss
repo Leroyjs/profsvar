@@ -1,31 +1,79 @@
 @import '~/sass/common';
 
+.button {
+  &_mobile {
+    display: none;
+  }
+}
+
 .detail-slider {
   background: #F5F5F5;
+
+  &__full-screen {
+    display: none;
+  }
+
+
+  &__zoom-button {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    z-index: 1;
+
+    &_active {
+      background-color: #009A3C;
+
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+
+    background: #010101;
+  }
 
   &__wrapper {
     position: fixed;
     left: 0;
     top: 124px;
-    width: calc(50vw);
-    height: 720px;
+    width: 50vw;
+    height: 50vw;
     max-height: 80vh;
-
   }
 
   &__item {
-    height: 720px;
-    width: calc(100%);
+    height: 50vw;
+    width: 100%;
     max-height: 80vh;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
 .detail-card {
-  margin-top: rubber(124);
+  margin-top: 124px;
   padding-left: 50%;
 
+
   &__buttons {
+    z-index: 98;
     position: fixed;
     right: 0px;
     bottom: 20px;
@@ -167,6 +215,12 @@
 .characteristics {
   margin-bottom: 60px;
 
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #009A3C;
+  }
+
   &__ul {
     display: flex;
     flex-direction: column;
@@ -209,5 +263,299 @@
 
   &__main {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .detail-card {
+    margin-top: 124px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .characteristics {
+    &__li {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .text {
+        font-size: 14px;
+        color: rgba(1, 1, 1, 0.4);
+      }
+    }
+
+    &__answer {
+      display: block;
+
+      span {
+        margin: 0;
+        font-size: 16px;
+        color: #010101;
+        font-weight: normal;
+      }
+
+      .text {
+        font-weight: normal;
+        font-size: 16px;
+        color: #010101;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .main-info {
+    margin-bottom: 140px;
+  }
+
+  .detail-card {
+    margin-top: 100px;
+  }
+
+  .detail-slider {
+    &__zoom-button {
+      top: 20px;
+      left: 40px;
+      height: 40px;
+      width: 40px;
+    }
+
+    &__wrapper {
+      top: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .detail-card {
+    padding-left: 20px;
+
+    &__buttons {
+      .buttons {
+        width: 100%;
+      }
+    }
+  }
+
+  .detail-slider {
+    .flickity-page-dots {
+      bottom: 16px;
+    }
+
+    &__zoom-button {
+      display: none;
+    }
+
+    &__full-screen {
+      left: 20px;
+      top: 20px;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &__wrapper {
+      padding: 0;
+      position: relative;
+      width: 100%;
+      top: auto;
+      height: 400px;
+      margin-bottom: 40px;
+    }
+
+    &__item {
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detail-card {
+    padding-left: 16px;
+
+    &__buttons {
+      z-index: 102;
+    }
+  }
+
+  .back {
+    display: none;
+  }
+
+  .characteristics {
+    margin-bottom: 40px;
+
+    &__title {
+      margin-top: 20px;
+    }
+
+    &__li {
+      padding-top: 14px;
+      padding-bottom: 12px;
+
+      .text {
+        margin-bottom: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+
+    &__answer {
+      display: block;
+
+      span {
+        font-size: 14px;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .cases {
+    margin-bottom: 40px;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .button {
+    &_desktop {
+      display: none;
+    }
+
+    &_mobile {
+      display: inline-block;
+    }
+  }
+
+  .text.text_grey-color.half {
+    width: 100%;
+  }
+
+  .detail-slider {
+    .flickity-page-dots {
+      bottom: -22px;
+    }
+
+    &__wrapper,
+    &__item {
+      height: 300px;
+    }
+  }
+
+  .main-info {
+    &__title {
+      width: 100%;
+    }
+  }
+
+  .appointment {
+    margin-top: 40px;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__seam {
+      margin-right: 16px;
+      margin-bottom: 16px;
+      width: 75px;
+    }
+
+    &__seams {
+      justify-content: center;
+    }
+
+    &__text {
+      width: 100%;
+      padding-right: 0;
+
+      &:first-of-type {
+        margin-bottom: 1em;
+      }
+    }
+
+    &__row {
+      flex-direction: column;
+    }
+  }
+
+  .options {
+    margin-bottom: 40px;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__row {
+      flex-direction: column;
+    }
+
+    &__text {
+      width: 100%;
+      padding-right: 0;
+
+      &:first-of-type {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .component {
+    width: 100%;
+  }
+
+  .components {
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .reviews {
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__main {
+      flex-direction: column;
+
+      .text {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .main-info {
+    margin-bottom: 100px;
+  }
+
+  .buttons {
+    &__wrapper {
+      bottom: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .detail-slider {
+
+    &__wrapper,
+    &__item {
+      height: 260px;
+    }
   }
 }

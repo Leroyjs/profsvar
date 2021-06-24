@@ -8,13 +8,27 @@
   <title>Profsvar</title>
   <link rel="stylesheet" href="./assets/main.css">
 </head>
-
-<body>
+<script>
+    window.pageLoaded = false;
+    window.addEventListener('load', function () {
+        window.pageLoaded = true;
+    })
+</script>
+<body class="no-scroll">
+  <div class="preloader">
+    <div class="preloader__seams-wrapper">
+      <img src="media/preloader.svg" alt="" class="preloader__seam preloader__seam_1">
+      <img src="media/preloader.svg" alt="" class="preloader__seam preloader__seam_2">
+    </div>
+    <div class="preloader__text">
+      Загрузка
+    </div>
+  </div>
   <div class="burger-menu">
     <ul class="burger-menu__ul">
-      <li class="burger-menu__li"><a href="#about" class="burger-menu__link link">О компании</a></li>
-      <li class="burger-menu__li"><a href="#cases" class="burger-menu__link link">Кейсы</a></li>
       <li class="burger-menu__li"><a href="#carriages" class="burger-menu__link link">Продукция</a></li>
+      <li class="burger-menu__li"><a href="#cases" class="burger-menu__link link">Кейсы</a></li>
+      <li class="burger-menu__li"><a href="#about" class="burger-menu__link link">О компании</a></li>
       <li class="burger-menu__li"><a href="#reviews" class="burger-menu__link link">Отзывы</a></li>
       <li class="burger-menu__li"><a href="#rehm" class="burger-menu__link link">Rehm</a></li>
       <li class="burger-menu__li"><a href="#footer" class="burger-menu__link link">Контакты</a></li>
@@ -26,10 +40,10 @@
       <div class="half">
         <a href="" class="burger-menu__bottom-text">info@profsvar.ru</a>
       </div> 
-      <button class="button half">
+      <button class="button half modal-social__open-button">
         Связаться с нами
       </button>
-      <button class="button button_green half">
+      <button class="button button_green half modal-contact__open-button">
         Демонстрация
       </button>
     </div>
@@ -38,9 +52,9 @@
     <nav class="main-header__nav">
       <a href="/"><img src="./media/logo.svg" alt="" class="main-header__logo"></a>
       <ul class="main-header__ul">
-        <li class="main-header__li"><a href="#about" class="main-header__link link text">О компании</a></li>
-        <li class="main-header__li"><a href="#cases" class="main-header__link link text">Кейсы</a></li>
         <li class="main-header__li"><a href="#carriages" class="main-header__link link text">Продукция</a></li>
+        <li class="main-header__li"><a href="#cases" class="main-header__link link text">Кейсы</a></li>
+        <li class="main-header__li"><a href="#about" class="main-header__link link text">О компании</a></li>
         <li class="main-header__li"><a href="#reviews" class="main-header__link link text">Отзывы</a></li>
         <li class="main-header__li"><a href="#rehm" class="main-header__link link text">Rehm</a></li>
         <li class="main-header__li"><a href="#footer" class="main-header__link link text">Контакты</a></li>
@@ -57,55 +71,80 @@
     </div>
   </header>
   <main class="main-content">
-    <section class="">
+    <section class="langing-slider__section">
       <div id="langing-slider" class="ancor"></div>
       <div class="langing-slider main-padding">
         <div class="langing-slider__slide-wrapper">
           <div class="langing-slider__slide">
+            <div class="langing-slider__slide-img parallax"></div>
             <div class="langing-slider__overlay"></div>
-            <span class="langing-slider__slide-title">
-              Варите вручную? <br>
-              Увеличим производительность <br>
-              сварки прямолинейных швов <br>
-              в 1,5-4 раза
+            <span class="langing-slider__slide-title-wrapper">
+              <div class="langing-slider__slide-title">
+                До сих пор <br>
+                варите вручную?
+              </div>
+              <span class="langing-slider__slide-sub-title">
+                Увеличим производительность сварки <br>
+                прямолинейных швов в 1,5-4 раза
+              </span>
             </span>
           </div>
         </div>
         <div class="langing-slider__slide-wrapper">
           <div class="langing-slider__slide">
+            <div class="langing-slider__slide-img parallax"></div>
             <div class="langing-slider__overlay"></div>
-            <span class="langing-slider__slide-title">
-              Варите вручную? <br>
-              Увеличим производительность <br>
-              сварки прямолинейных швов <br>
-              в 1,5-4 раза
+            <span class="langing-slider__slide-title-wrapper">
+              <div class="langing-slider__slide-title">
+                До сих пор <br>
+                варите вручную?
+              </div>
+              <span class="langing-slider__slide-sub-title">
+                Увеличим производительность сварки <br>
+                прямолинейных швов в 1,5-4 раза
+              </span>
             </span>
           </div>
         </div>
         <div class="langing-slider__slide-wrapper">
           <div class="langing-slider__slide">
+            <div class="langing-slider__slide-img parallax"></div>
             <div class="langing-slider__overlay"></div>
-            <span class="langing-slider__slide-title">
-              Варите вручную? <br>
-              Увеличим производительность <br>
-              сварки прямолинейных швов <br>
-              в 1,5-4 раза
+            <span class="langing-slider__slide-title-wrapper">
+              <div class="langing-slider__slide-title">
+                До сих пор <br>
+                варите вручную?
+              </div>
+              <span class="langing-slider__slide-sub-title">
+                Увеличим производительность сварки <br>
+                прямолинейных швов в 1,5-4 раза
+              </span>
             </span>
           </div>
         </div>
       </div>
       <div class="main-padding">
         <div class="buttons__wrapper">
-          <div class="buttons">
-            <button class="button">
-              Связаться с нами
-            </button>
-            <button class="button button_green">
-              <span class="tabs_desk">Записаться на демонстрацию</span>
-              <span class="tabs_mobile">Демонстрация</span>
-            </button>
-          </div>
+        <div class="buttons">
+          <button class="button modal-social__open-button">
+            Связаться с нами
+          </button>
+          <button class="button button_green modal-contact__open-button">
+            <span class="tabs_desk">Записаться на демонстрацию</span>
+            <span class="tabs_mobile">Демонстрация</span>
+          </button>
         </div>
+        <div class="buttons__sub-button">
+          <a href="#carriages" class="scroll-top">
+            <svg class="rotate-180" width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.29289 0.292892C7.68342 -0.0976315 8.31658 -0.0976314 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928933 8.07107C0.538408 7.68054 0.538408 7.04738 0.928933 6.65685L7.29289 0.292892ZM7 23L7 1L9 1L9 23L7 23Z" fill="white" fill-opacity="0.2"/>
+            </svg>
+            <span class="scroll-top__text text">
+              Листайте вниз
+            </span>
+          </a>          
+        </div>
+      </div>
       </div>
     </section>
     <section class="carriages">
@@ -121,14 +160,14 @@
             <h5 class="filters__title text text_grey-color">Движение каретки</h5>
             <div class="filters__main">
               <label class="filters__item text">
-                <input type="radio" name="movement" class="filters__hidden-input" value="on-wheels">
+                <input type="checkbox" name="movement" class="filters__hidden-input" value="on-wheels">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
                 На колёсах
               </label>
               <label class="filters__item text">
-                <input type="radio" name="movement" value="on-rail" class="filters__hidden-input">
+                <input type="checkbox" name="movement" value="on-rail" class="filters__hidden-input">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
@@ -137,21 +176,42 @@
             </div>
           </div>
           <div class="filters">
-            <h5 class="filters__title text text_grey-color">Движение каретки</h5>
+            <h5 class="filters__title text text_grey-color">
+              Механизм колебаний
+              <span class="filters__choose-info text_green-color">Что выбрать?</span>
+            </h5>
+            <div class="modal-choose-info">
+              <div class="modal-choose-info__cancel">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2L10 10M10 2L2 10" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="modal-choose-info__title text_green-color">
+                Механизм колебаний нужен:
+              </div>
+              <ul class="modal-choose-info__ul">
+                <li class="modal-choose-info__li">При сварке угловых или тавровых швов, если катет более 6мм</li>
+                <li class="modal-choose-info__li">При сварке стыковых швов, если требуемая ширина шва более 8мм</li>
+                <li class="modal-choose-info__li">При вертикальной сварке «на подъём»</li>
+                <li class="modal-choose-info__li">При сварке порошковой проволокой для многопроходных швов</li>
+                <li class="modal-choose-info__li">Для быстрой настройки угла поворота горелки при многопроходной сварке или для корректировки угла во время сварки</li>
+                <li class="modal-choose-info__li">Для наплавки</li>
+              </ul>
+            </div>
             <div class="filters__main">
               <label class="filters__item text">
-                <input type="radio" name="movement" class="filters__hidden-input" value="on-wheels">
+                <input type="checkbox" name="mechanism" class="filters__hidden-input" value="with-mechanism">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
-                На колёсах
+                С механизмом
               </label>
               <label class="filters__item text">
-                <input type="radio" name="movement" value="on-rail" class="filters__hidden-input">
+                <input type="checkbox" name="mechanism" value="without-mechanism" class="filters__hidden-input">
                 <div class="filters__input">
                   <div class="filters__input-inner"></div>
                 </div>
-                На рейке
+                Без механизма
               </label>
             </div>
           </div>
@@ -162,26 +222,27 @@
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-                fill="#010101" fill-opacity="0.4"/>
+                fill="#010101" fill-opacity="0.1"/>
             </svg>
             <svg class="catalog-slider__arrow catalog-slider__arrow_right catalog-slider_desk" width="81" height="16" viewBox="0 0 81 16"
               fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-                fill="#010101" fill-opacity="0.4"/>
+                fill="#010101" fill-opacity="0.1"/>
             </svg>
             <svg  class="catalog-slider__arrow catalog-slider__arrow_left catalog-slider_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+              <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.1"/>
             </svg>
             <div class="catalog-slider__numbers catalog-slider_mobile">
             </div>
             <svg class="catalog-slider__arrow catalog-slider__arrow_right catalog-slider_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
+             <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.1"/>
             </svg>
           </div>
           <div class="catalog-slider__main">
-            <a href="/detail-card.html" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-wheels" data-mechanism="with-mechanism">
               <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
@@ -199,13 +260,14 @@
                 </span>
                 <p class="text catalog-slide__desc">
                   Сварочная каретка <br>
-                  на колёсах без механизма <br>
+                  на колёсах с механизма <br>
                   колебаний
                 </p>
               </div>
             </a>
-            <a href="/detail-card.html" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-wheels" data-mechanism="with-mechanism">
               <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
@@ -223,13 +285,39 @@
                 </span>
                 <p class="text catalog-slide__desc">
                   Сварочная каретка <br>
-                  на колёсах без механизма <br>
+                  на колёсах с механизма <br>
+                  колебаний
+                </p>
+              </div>
+            </a> 
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-wheels" data-mechanism="without-mechanism">
+              <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
+                <div class="catalog-slide__more">
+                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
+                  </svg>
+                  <span class="catalog-slide__more-text text">Подробнее</span>
+                </div>
+              </div>
+              <div class="catalog-slide__text">
+                <h3 class="catalog-slide__title">
+                  Сварочная каретка <br>
+                  Profsvar Basic DUO
+                </h3>
+                <span class="catalog-slide__cost">
+                  250 000 ₽
+                </span>
+                <p class="text catalog-slide__desc">
+                  Сварочная каретка <br>
+                  на колесах без механизмом <br>
                   колебаний
                 </p>
               </div>
             </a>
-            <a href="/detail-card.html" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-rail" data-mechanism="with-mechanism">
               <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
@@ -247,13 +335,14 @@
                 </span>
                 <p class="text catalog-slide__desc">
                   Сварочная каретка <br>
-                  на колёсах без механизма <br>
+                  на рейке c механизмом <br>
                   колебаний
                 </p>
               </div>
             </a>
-            <a href="/detail-card.html" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-rail" data-mechanism="without-mechanism">
               <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
@@ -271,13 +360,14 @@
                 </span>
                 <p class="text catalog-slide__desc">
                   Сварочная каретка <br>
-                  на колёсах без механизма <br>
+                  на рейке без механизмом <br>
                   колебаний
                 </p>
               </div>
             </a>
-            <a href="/detail-card.html" class="catalog-slide">
+            <a href="/detail-card.html" class="catalog-slide" data-movement="on-rail" data-mechanism="without-mechanism">
               <div class="catalog-slide__photo">
+                <img src="./media/catalog-slider/1.png" alt="" class="catalog-slide__photo-inner">
                 <div class="catalog-slide__more">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
@@ -295,31 +385,7 @@
                 </span>
                 <p class="text catalog-slide__desc">
                   Сварочная каретка <br>
-                  на колёсах без механизма <br>
-                  колебаний
-                </p>
-              </div>
-            </a>            
-            <a href="/detail-card.html" class="catalog-slide">
-              <div class="catalog-slide__photo">
-                <div class="catalog-slide__more">
-                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1H45M45 1V45M45 1L1 45" stroke="#010101" stroke-opacity="0.1" stroke-width="2" />
-                  </svg>
-                  <span class="catalog-slide__more-text text">Подробнее</span>
-                </div>
-              </div>
-              <div class="catalog-slide__text">
-                <h3 class="catalog-slide__title">
-                  Сварочная каретка <br>
-                  Profsvar Basic DUO
-                </h3>
-                <span class="catalog-slide__cost">
-                  250 000 ₽
-                </span>
-                <p class="text catalog-slide__desc">
-                  Сварочная каретка <br>
-                  на колёсах без механизма <br>
+                  на рейке без механизмом <br>
                   колебаний
                 </p>
               </div>
@@ -375,20 +441,20 @@
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-            fill="#010101" fill-opacity="0.4"/>
+            fill="#010101" fill-opacity="0.1"/>
         </svg>
         <svg class="tabs__arrow tabs_desk tabs__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-            fill="#010101" fill-opacity="0.4"/>
+            fill="#010101" fill-opacity="0.1"/>
         </svg>
         <svg  class="tabs__arrow tabs__arrow_left tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.1"/>
         </svg>
         <div class="tabs__numbers tabs_mobile"></div>
         <svg class="tabs__arrow tabs__arrow_right tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
+          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.1"/>
         </svg>
       </div>
       <div class="cases__main case main-padding">
@@ -396,7 +462,7 @@
         <div class="case__main">
           <div class="case__text">
             <div class="case__block">
-              <span class="case__text-title">Задача</span>
+              <span class="case__text-title h4">Задача</span>
               <div id="case-task" class="text text_grey-color case__text-block">
                 <p>
                   При сварке угловых швов жидкий металл стремится стекать на нижнюю плоскость. Поэтому сварку таких швов в
@@ -411,7 +477,7 @@
               </div>
             </div>
             <div class="case__block">
-              <span class="case__text-title text_green-color">Решение</span>
+              <span class="case__text-title text_green-color h4">Решение</span>
               <div id="case-solution" class="text case__text-block">
                 <p>
                   При сварке углового шва, нижняя плоскость которого расположена горизонтально, возможен непровар вершины
@@ -427,18 +493,34 @@
             </div>
           </div>
           <div class="case__gallery-wrapper case-gallery__wrapper">
+            <div class="case-gallery__zoom-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M14.4435 14.4435C17.5188 11.3681 17.5188 6.38191 14.4435 3.30653C11.3681 0.231155 6.38191 0.231155 3.30653 3.30653C0.231155 6.38191 0.231155 11.3681 3.30653 14.4435C6.38191 17.5188 11.3681 17.5188 14.4435 14.4435ZM14.4435 14.4435L19 19M8.875 5.5V8.875M8.875 8.875H5.5M8.875 8.875V12.25M8.875 8.875H12.25" stroke="#010101" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="case-gallery__full-screen">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M14.4435 14.4435C17.5188 11.3681 17.5188 6.38191 14.4435 3.30653C11.3681 0.231155 6.38191 0.231155 3.30653 3.30653C0.231155 6.38191 0.231155 11.3681 3.30653 14.4435C6.38191 17.5188 11.3681 17.5188 14.4435 14.4435ZM14.4435 14.4435L19 19M8.875 5.5V8.875M8.875 8.875H5.5M8.875 8.875V12.25M8.875 8.875H12.25" stroke="#010101" stroke-width="2"/>
+              </svg>
+            </div>
             <div class="case-gallery__arrow case-gallery__arrow_left">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="tabs_desk" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM21 7L1 7V9L21 9V7Z"
-                  fill="#010101" fill-opacity="0.2" />
+                  fill="#010101" fill-opacity="0.1" />
+              </svg>
+              <svg  class="tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.1"/>
               </svg>
             </div>
             <div class="case-gallery__arrow case-gallery__arrow_right">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="tabs_desk" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9L20 9V7L0 7L0 9Z"
-                  fill="#010101" fill-opacity="0.2" />
+                  fill="#010101" fill-opacity="0.1" />
+              </svg>
+              <svg class="tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.1"/>
               </svg>
             </div>
             <div class="case-gallery">
@@ -477,8 +559,8 @@
               1
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные 
+              сварные швы быстрее 
               в 1,5—3 раза
             </div>
           </div>
@@ -487,8 +569,8 @@
               2
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные 
+              сварные швы быстрее
               в 1,5—3 раза
             </div>
           </div>
@@ -497,8 +579,8 @@
               3
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные
+              сварные швы быстрее
               в 1,5—3 раза
             </div>
           </div>
@@ -507,8 +589,8 @@
               4
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные 
+              сварные швы быстрее 
               в 1,5—3 раза
             </div>
           </div>
@@ -517,8 +599,8 @@
               5
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные 
+              сварные швы быстрее
               в 1,5—3 раза
             </div>
           </div>
@@ -527,18 +609,27 @@
               6
             </div>
             <div class="benefit__item-text">
-              Качественные <br>
-              сварные швы быстрее <br>
+              Качественные
+              сварные швы быстрее
               в 1,5—3 раза
             </div>
           </div>
         </div>
-        <img src="./media/profsvar.svg" alt="" class="benefit__img">
+        <svg  class="benefit__img" width="1600" viewBox="0 0 1600 162" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M73.7203 5.51856H-52.4903V153.51H6.25435V121.302H73.6751C85.8307 121.302 136.939 118.839 136.939 63.4385C136.939 8.03779 91.7278 5.51856 73.7203 5.51856ZM73.7203 74.6113H-17.5598V73.1765L6.25435 63.4385V52.2092H73.6751L73.7203 74.6113Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M1183.15 5.56397L1132.29 96.5503L1081.44 5.56397H1013.01L1105.06 153.612H1159.52L1251.57 5.56397H1183.15Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M1300.23 5.51856L1208.18 153.566H1276.6L1288.87 131.639H1366.05L1378.3 153.578H1446.73L1354.68 5.51856H1300.23ZM1290.73 97.7815V96.3016L1313.96 86.8121L1327.51 62.6251L1347.16 97.7815H1290.73Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M348.486 63.4385C348.486 8.0265 303.241 5.51856 285.29 5.51856H151.229V153.51H209.973V121.302H259.432L284.342 153.566H352.124L317.532 108.762C333.303 102.368 348.486 89.4556 348.486 63.4385ZM285.223 52.2092V74.6564H186.17V73.1765L210.018 63.4385V52.2092H285.223Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M1583.88 153.567H1651.66L1617.06 108.762C1632.88 102.368 1648.01 89.4558 1648.01 63.4387C1648.01 8.02673 1602.83 5.56397 1584.75 5.56397H1450.72V153.555H1509.47V121.302H1558.93L1583.88 153.567ZM1584.73 52.2095V74.6567H1485.66V73.1768L1509.51 63.4387V52.2095H1584.73Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M604.194 80.9153C604.137 42.6748 586.683 1 481.666 1C376.648 1 359.195 42.6748 359.138 80.9153V81.0847C359.195 119.337 376.648 161 481.666 161C586.683 161 604.137 119.337 604.194 81.0847V80.9153ZM541.382 81.0282C541.382 94.8671 532.853 109.937 481.666 109.937C430.479 109.937 421.984 94.8671 421.984 81.0282C421.984 67.1894 430.513 52.1191 481.7 52.1191C532.887 52.1191 541.393 67.1894 541.416 81.0282H541.382Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M946.91 59.7446C907.574 59.0442 873.762 59.2137 873.762 51.5769C873.762 44.4597 900.333 42.912 917.967 42.912C932.834 42.912 957.507 45.1714 957.507 53.7233H1020.16C1020.16 53.7233 1029.44 1 916.318 1C800.128 1 813.244 58.9877 814.34 64.9977C815.436 71.0078 820.531 99.2843 888.279 101.815C956.027 104.345 964.398 103.939 964.398 110.31C964.398 116.682 944.866 119.551 916.951 119.551C889.036 119.551 874.022 116.411 874.022 107.509H810.872C810.872 107.509 799.236 161 915.685 161C1032.14 161 1028.14 115.608 1023.76 92.9692C1019.39 70.3299 986.247 60.4111 946.91 59.7446Z" stroke="white" stroke-opacity="0.4"/>
+          <path d="M620.847 5.56397V153.567H679.637V111.914H790.167V74.6567H655.789V73.1768L679.637 63.4387V55.3613H790.167V5.56397H620.847Z" stroke="white" stroke-opacity="0.4"/>
+        </svg>
       </div>
     </section>
     <section class="about main-padding">
       <div id="about" class="ancor"></div>
-      <div class="half about__half">
+      <div class="half about__half about__block">
         <span class="about__title">О компании</span>
         <p class="about__main-text h3">
           <span class=" text_green-color">Profsvar <span class="horizontal-line">———</span> </span> <br>
@@ -549,7 +640,7 @@
           и плазменной резки
         </p>
       </div>
-      <div class="half">
+      <div class="half about__block">
         <span class="about__title">Достижения</span>
         <div class="about__achievements">
           <div class="about__achievements-item half">
@@ -601,14 +692,19 @@
           по всей Российской Федерации
           и за ее пределами
         </p>
-        <div class="button button_green map__button_mobile">Посмотреть список городов и стран</div>
+        <div id="city-list__button" class="button button_green map__button_mobile">Посмотреть список городов и стран</div>
       </div>
       <div class="map">
-        <div class="half  map__info">
+        <div class="half map__info">
+          <div class="map__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
           <div class="map__list city-list">
             <div class="city-list__info main-padding">
               <div class="half h4 city-list__info-item">
-                Город / Страна
+                Город
               </div>
               <div class="half h4 city-list__info-item">
                 Кол-во кареток
@@ -764,20 +860,20 @@
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0.292892 7.29289C-0.0976334 7.68342 -0.0976334 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM81 7L1 7V9L81 9V7Z"
-            fill="#010101" fill-opacity="0.4"/>
+            fill="#010101" fill-opacity="0.1"/>
         </svg>
         <svg class="tabs__arrow tabs_desk tabs__arrow_right" id="reviews__arrow_right" width="81" height="16" viewBox="0 0 81 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M80.7071 8.70711C81.0976 8.31659 81.0976 7.68342 80.7071 7.2929L74.3431 0.928939C73.9526 0.538414 73.3195 0.538414 72.9289 0.928939C72.5384 1.31946 72.5384 1.95263 72.9289 2.34315L78.5858 8.00001L72.9289 13.6569C72.5384 14.0474 72.5384 14.6805 72.9289 15.0711C73.3195 15.4616 73.9526 15.4616 74.3431 15.0711L80.7071 8.70711ZM-8.74228e-08 9L80 9.00001L80 7.00001L8.74228e-08 7L-8.74228e-08 9Z"
-            fill="#010101" fill-opacity="0.4"/>
+            fill="#010101" fill-opacity="0.1"/>
         </svg>
         <svg  class="tabs__arrow tabs__arrow_left tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.2"/>
+          <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM37 7L1 7V9L37 9V7Z" fill="#010101" fill-opacity="0.1"/>
         </svg>
         <div class="tabs__numbers tabs_mobile"></div>
         <svg class="tabs__arrow tabs__arrow_right tabs_mobile" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.2"/>
+          <path d="M36.7071 8.7071C37.0976 8.31658 37.0976 7.68341 36.7071 7.29289L30.3431 0.92893C29.9526 0.538405 29.3195 0.538405 28.9289 0.92893C28.5384 1.31945 28.5384 1.95262 28.9289 2.34314L34.5858 8L28.9289 13.6569C28.5384 14.0474 28.5384 14.6805 28.9289 15.0711C29.3195 15.4616 29.9526 15.4616 30.3431 15.0711L36.7071 8.7071ZM8.74228e-08 9L36 9L36 7L-8.74228e-08 7L8.74228e-08 9Z" fill="#010101" fill-opacity="0.1"/>
         </svg>
       </div>
       <div class="reviews__main reviews__main_active main-padding" id="review-1">
@@ -859,10 +955,10 @@
       </div>
       <div class="buttons__wrapper">
         <div class="buttons">
-          <button class="button">
+          <button class="button modal-social__open-button">
             Связаться с нами
           </button>
-          <button class="button button_green">
+          <button class="button button_green modal-contact__open-button">
             <span class="tabs_desk">Записаться на демонстрацию</span>
             <span class="tabs_mobile">Демонстрация</span>
           </button>
@@ -889,21 +985,65 @@
         <div class="text text_grey-color half rehm__text">
           Мы осуществляем поставку сварочного оборудования Rehm для полуавтоматической, аргонодуговой и ручной сварки, а также системы для плазменной резки
         </div>
+        <img src="./media/rehm.jpg" alt="" class="rehm__img_mobile">
         <button class="button button_border">
           Подробнее
         </button>
       </div>
       <div class="half">
-        <img src="./media/rehm.jpg" alt="" class="">
+        <img src="./media/rehm.jpg" alt="" class="rehm__img_desk">
       </div>
     </section>
   </main>
-  <footer id="footer" class="footer main-padding">
+  <div class="" id="footer"></div>
+  <footer  class="footer-mobile">
+    <div class="footer-mobile__row main-padding">
+      <a href="" class="footer-mobile__a half">8 800 300 06 23</a>
+      <a href="" class="footer-mobile__a half">info@profsvar.ru</a>
+    </div>
+    <div class="footer-mobile__column footer-mobile__office main-padding">
+      <h4 class="h4 footer-mobile__title text_grey-color">Офис</h4>
+      <p target="_blank" class="h3 footer-mobile__adress">
+        Конструкторов 5 <br>
+        620007 Екатеринбург <br>
+        Сведловская область
+      </p>
+      <a href="" class="h4 text_grey-color footer-mobile__underline">Проложить маршрут</a>
+    </div>
+    <div class="footer-mobile__column main-padding">
+      <h4 class="h4 footer-mobile__title text_grey-color">Мы в социальных сетях</h4>
+      <div class="footer-mobile__row">
+        <a href="" class="footer-mobile__a_bold half h3">Youtube</a>
+        <a href="" class="footer-mobile__a_bold half h3">Instagram</a>
+      </div>
+    </div>
+    <div class="docs main-padding">
+      <a href="" class="docs__item text text_grey-color half">Прайс</a>
+      <a href="" class="docs__item text text_grey-color half">Презентация</a>
+    </div>
+    <div class="footer-mobile__column footer-mobile__office main-padding">
+      <a href="" class="h4 text_grey-color footer-mobile__underline">Политика Cookies</a><br>
+      <a href="" class="h4 text_grey-color footer-mobile__underline">Политика конфиденциальности</a>
+    </div>
+    <div class="footer-mobile__cop footer-mobile__row h4 text_grey-color main-padding">
+      <div class="footer-mobile__cop-item half">
+        © ООО Профсвар <br>
+        <br>
+        2021
+      </div>
+      <div class="footer-mobile__cop-item half">
+        Профессиональное <br>
+        сварочное оборудование <br>
+        и комплектующие.
+      </div>
+    </div>
+  </footer>
+  <footer class="footer main-padding">
     <div class="footer__main">
       <div class="half  footer__column">
         <div class="half">
           <h3 class="h4 footer__title text_grey-color">Офис</h3>
-          <a href="https://yandex.ru/maps/54/yekaterinburg/house/ulitsa_konstruktorov_5/YkkYcQ5hQUwAQFtsfXRydXtiYw==/?ll=60.791897%2C56.834718&z=17.7" class="footer__text footer__link">
+          <a target="_blank" href="https://yandex.ru/maps/54/yekaterinburg/house/ulitsa_konstruktorov_5/YkkYcQ5hQUwAQFtsfXRydXtiYw==/?ll=60.791897%2C56.834718&z=17.7" class="footer__text footer__link">
             Конструкторов 5 <br>
             620007 Екатеринбург<br>
             Сведловская область
@@ -950,6 +1090,107 @@
       </div>
     </div>
   </footer>
+  <div class="modal-social">
+    <div class="modal-social__overlay"></div>
+    <div class="modal-social__close">
+      <span>Закрыть</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="modal-social__content">
+      <h3 class="h3 text_white-color modal-social__title">
+        Связаться с нами
+      </h3>
+      <div class="modal-social__row">
+        <div class="modal-social__item-wrapper">
+          <a href="" class="modal-social__item link">
+            <img src="./media/social/phone.svg" alt="" class="modal-social__icon">
+            <span class="modal-social__text text text_white-color">8 800 300 06 23</span>
+          </a>
+        </div>
+        <div class="modal-social__item-wrapper">
+          <a href="" class="modal-social__item">
+            <img src="./media/social/tg.svg" alt="" class="modal-social__icon">
+            <span class="modal-social__text text text_white-color">Telegram</span>
+          </a>
+        </div>
+        <div class="modal-social__item-wrapper">
+          <a href="" class="modal-social__item">
+            <img src="./media/social/wap.svg" alt="" class="modal-social__icon">
+            <span class="modal-social__text text text_white-color">WhatsApp</span>
+          </a>
+        </div>
+        <div class="modal-social__item-wrapper">
+          <a href="" class="modal-social__item">
+            <img src="./media/social/vb.svg" alt="" class="modal-social__icon">
+            <span class="modal-social__text text text_white-color">Viber</span>
+          </a>
+        </div>
+        <div class="modal-social__item-wrapper">
+          <a href="" class="modal-social__item">
+            <img src="./media/social/mail.svg" alt="" class="modal-social__icon">
+            <span class="modal-social__text text text_white-color">info@profsvar.ru</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-contact">
+    <div class="modal-contact__overlay"></div>
+    <div class="modal-contact__close">
+      <span>Закрыть</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="modal-contact__content">
+      <h3 class="h3 text_white-color">Записаться на демонстрацию</h3>
+      <form class="modal-contact__form">
+        <div class="modal-contact__inputs">
+          <div class="modal-contact__input-wrapper">
+            <input type="text" class="modal-contact__input modal-contact__input_type_name" placeholder=" ">
+            <div class="modal-contact__placeholder">Ваше имя</div>
+            <div class="modal-contact__error modal-contact__error_type_name"></div>
+          </div>
+          <div class="modal-contact__input-wrapper">
+            <input type="text" class="modal-contact__input modal-contact__input_type_number" placeholder=" ">
+            <div class="modal-contact__placeholder">Номер телефона</div>
+            <div class="modal-contact__error modal-contact__error_type_number"></div>
+          </div>
+          <div class="modal-contact__input-wrapper">
+            <input type="text" class="modal-contact__input modal-contact__input_type_mail" placeholder=" ">
+            <div class="modal-contact__placeholder">E-mail</div>
+            <div class="modal-contact__error modal-contact__error_type_mail"></div>
+          </div>
+          <div class="modal-contact__input-wrapper">
+            <input type="text" class="modal-contact__input modal-contact__input_type_comment" placeholder=" ">
+            <div class="modal-contact__placeholder">Комментарий</div>
+            <div class="modal-contact__error modal-contact__error_type_comment"></div>
+          </div>
+        </div>
+        <div class="modal-contact__button-wrapper">
+          <button class="button button_green">Записаться на демонстрацию</button>
+          <p class="modal-contact__privacy-policy">
+            Нажимая “Записаться на демонстрацию” <br>
+            я соглашаюсь с <a href="" class="modal-contact__a"> политикой обработки данных</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-full-screen">
+    <div class="modal-full-screen__overlay"></div>
+    <div class="modal-full-screen__close">
+      <span>Закрыть</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="modal-full-screen__content">
+
+    </div>
+  </div>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="./assets/main.js"></script>
 </body>

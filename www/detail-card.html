@@ -8,21 +8,50 @@
   <link rel="stylesheet" href="./assets/detailCard.css">
 </head>
 <body>
+  <div class="burger-menu">
+    <ul class="burger-menu__ul">
+      <li class="burger-menu__li"><a href="/#about" class="burger-menu__link link">О компании</a></li>
+      <li class="burger-menu__li"><a href="/#cases" class="burger-menu__link link">Кейсы</a></li>
+      <li class="burger-menu__li"><a href="/#carriages" class="burger-menu__link link">Продукция</a></li>
+      <li class="burger-menu__li"><a href="/#reviews" class="burger-menu__link link">Отзывы</a></li>
+      <li class="burger-menu__li"><a href="/#rehm" class="burger-menu__link link">Rehm</a></li>
+      <li class="burger-menu__li"><a href="/#footer" class="burger-menu__link link">Контакты</a></li>
+    </ul>
+    <div class="burger-menu__bottom-block">
+      <div class="half">
+        <a href="" class="burger-menu__bottom-text">8 800 300 06 23</a>
+      </div>
+      <div class="half">
+        <a href="" class="burger-menu__bottom-text">info@profsvar.ru</a>
+      </div> 
+      <button class="button half">
+        Связаться с нами
+      </button>
+      <button class="button button_green half modal-contact__open-button">
+        Демонстрация
+      </button>
+    </div>
+  </div>
   <header class="main-header main-padding">
     <nav class="main-header__nav">
       <a href="/"><img src="./media/logo.svg" alt="" class="main-header__logo"></a>
       <ul class="main-header__ul">
-        <li class="main-header__li"><a href="/#about" class="main-header__link link text">О компании</a></li>
-        <li class="main-header__li"><a href="/#cases" class="main-header__link link text">Кейсы</a></li>
-        <li class="main-header__li"><a href="/#carriages" class="main-header__link link text">Продукция</a></li>
-        <li class="main-header__li"><a href="/#reviews" class="main-header__link link text">Отзывы</a></li>
-        <li class="main-header__li"><a href="/#rehm" class="main-header__link link text">Rehm</a></li>
-        <li class="main-header__li"><a href="/#footer" class="main-header__link link text">Контакты</a></li>
+        <li class="main-header__li"><a href="#about" class="main-header__link link text">О компании</a></li>
+        <li class="main-header__li"><a href="#cases" class="main-header__link link text">Кейсы</a></li>
+        <li class="main-header__li"><a href="#carriages" class="main-header__link link text">Продукция</a></li>
+        <li class="main-header__li"><a href="#reviews" class="main-header__link link text">Отзывы</a></li>
+        <li class="main-header__li"><a href="#rehm" class="main-header__link link text">Rehm</a></li>
+        <li class="main-header__li"><a href="#footer" class="main-header__link link text">Контакты</a></li>
       </ul>
     </nav>
     <div class="sub-nav">
       <a href="" class="link link_green sub-nav__link sub-nav__link_tel text text_green-color">8 800 300 06 23</a>
       <a href="" class="link sub-nav__link text">EN</a>
+      <div class="burger">
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+      </div>
     </div>
   </header>
   <main class="main-content detail-card  main-padding ">
@@ -39,6 +68,20 @@
       </div>
     </div>
     <section class="detail-slider__wrapper main-padding">
+      <div class="detail-slider__zoom-button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.4435 14.4435C17.5188 11.3681 17.5188 6.38191 14.4435 3.30653C11.3681 0.231155 6.38191 0.231155 3.30653 3.30653C0.231155 6.38191 0.231155 11.3681 3.30653 14.4435C6.38191 17.5188 11.3681 17.5188 14.4435 14.4435ZM14.4435 14.4435L19 19M8.875 5.5V8.875M8.875 8.875H5.5M8.875 8.875V12.25M8.875 8.875H12.25"
+            stroke="#010101" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="detail-slider__full-screen">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.4435 14.4435C17.5188 11.3681 17.5188 6.38191 14.4435 3.30653C11.3681 0.231155 6.38191 0.231155 3.30653 3.30653C0.231155 6.38191 0.231155 11.3681 3.30653 14.4435C6.38191 17.5188 11.3681 17.5188 14.4435 14.4435ZM14.4435 14.4435L19 19M8.875 5.5V8.875M8.875 8.875H5.5M8.875 8.875V12.25M8.875 8.875H12.25"
+            stroke="#010101" stroke-width="2" />
+        </svg>
+      </div>
       <div class="detail-slider">
         <img src="./media/detail-slider/1.png" alt="" class="detail-slider__item">
         <img src="./media/detail-slider/1.png" alt="" class="detail-slider__item">
@@ -135,7 +178,7 @@
           <li class="characteristics__li">
             <div class="text">Масса каретки</div>
             <div class="characteristics__answer">
-              <span class="h4 text_grey-color">не более</span>
+              <span class="h4 text_grey-color">не более </span>
               <span class="text">13 кг</span>
             </div>
           </li>
@@ -223,13 +266,65 @@
             <button class="button">
               Связаться с нами
             </button>
-            <button class="button button_green">
-              Записаться на демонстрацию
+            <button class="button button_green modal-contact__open-button">
+              <span class="button_desktop">Записаться на демонстрацию</span>
+              <span class="button_mobile">Демонстрация</span>
             </button>
           </div>
         </div>
     </section>
   </main>
+  <div class="modal-contact">
+    <div class="modal-contact__overlay"></div>
+    <div class="modal-contact__close">
+      <span>Закрыть</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="modal-contact__content">
+      <h3 class="h3 text_white-color">Записаться на демонстрацию</h3>
+      <div class="modal-contact__form">
+        <div class="modal-contact__input-wrapper">
+          <input type="text" class="modal-contact__input" placeholder=" ">
+          <div class="modal-contact__placeholder">Ваше имя</div>
+          <div class="modal-contact__error">неверно введен номер</div>
+        </div>
+        <div class="modal-contact__input-wrapper">
+          <input type="text" class="modal-contact__input" placeholder=" ">
+          <div class="modal-contact__placeholder">Номер телефона</div>
+          <div class="modal-contact__error">неверно введен номер</div>
+        </div>
+        <div class="modal-contact__input-wrapper">
+          <input type="text" class="modal-contact__input" placeholder=" ">
+          <div class="modal-contact__placeholder">E-mail</div>
+          <div class="modal-contact__error">неверно введен номер</div>
+        </div>
+        <div class="modal-contact__input-wrapper">
+          <input type="text" class="modal-contact__input" placeholder=" ">
+          <div class="modal-contact__placeholder">Комментарий</div>
+          <div class="modal-contact__error">неверно введен номер</div>
+        </div>
+        <button class="button button_green">Записаться на демонстрацию</button>
+        <p class="modal-contact__privacy-policy">
+          Нажимая “Записаться на демонстрацию” <br>
+          я соглашаюсь с <a href="" class="modal-contact__a"> политикой обработки данных</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-full-screen">
+    <div class="modal-full-screen__overlay"></div>
+    <div class="modal-full-screen__close">
+      <span>Закрыть</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L23 23M23 1L1 23" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="modal-full-screen__content">
+
+    </div>
+  </div>
   <script src="./assets/detailCard.js"></script>
 </body>
 </html>

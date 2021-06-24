@@ -41,6 +41,8 @@
     "@googlemaps/js-api-loader": "^1.11.4",
     "axios": "^0.18.0",
     "flickity": "^2.2.2",
+    "flickity-fullscreen": "^1.1.1",
+    "inputmask": "^5.0.6",
     "smooth-scrollbar": "^8.6.2"
   }
 }
