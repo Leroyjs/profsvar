@@ -66,13 +66,171 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   })();
   (function initLangingSlider() {
+    const canAutoPlay = [];
+    let ready = true;
     const _langingSlider = document.querySelector('.langing-slider');
-    const flktyLangingSlider = new Flickity(_langingSlider, {
-      // options
-      cellAlign: 'left',
-      contain: true,
-      autoPlay: true
-    });
+    const _langingSliderSlide = document.querySelectorAll(
+      '.langing-slider__slide-wrapper'
+    );
+    let activeIndex = 0;
+    const dotsArray = [];
+
+    const timeAnimation = 0.5;
+
+    (function initDots() {
+      const _dots = document.querySelector(
+        '.langing-slider .flickity-page-dots'
+      );
+
+      _langingSliderSlide.forEach((item, index) => {
+        const _dot = document.createElement('div');
+        _dot.classList.add('dot');
+        if (index === 0) {
+          _dot.classList.add('is-selected');
+        }
+
+        _dot.addEventListener('click', e => {
+          if (ready) {
+            e.stopPropagation();
+            if (!_dot.classList.contains('is-selected')) {
+              activeIndex = index;
+              console.log(index);
+              changeActiveSlide(activeIndex, false);
+            }
+          }
+        });
+        dotsArray.push(_dot);
+        _dots.append(_dot);
+      });
+    })();
+    function setActiveDot(index) {
+      dotsArray.forEach(item => {
+        item.classList.remove('is-selected');
+      });
+      dotsArray[index].classList.add('is-selected');
+    }
+    function changeActiveSlide(index, isNext = true) {
+      ready = false;
+      const _activeSlide = document.querySelector(
+        '.langing-slider__slide-wrapper_active'
+      );
+
+      const _overlay = _activeSlide.querySelector('.langing-slider__overlay');
+
+      const _newSlide = _langingSliderSlide[index];
+      const _title = _newSlide.querySelector('.langing-slider__slide-title');
+      const _subTitle = _newSlide.querySelector(
+        '.langing-slider__slide-sub-title'
+      );
+      let initPosX = isNext ? 30 : -30;
+      setArrows(index);
+      setActiveDot(index);
+
+      _newSlide.style.opacity = 0;
+      _title.style.transition = `opacity 0.3s ${timeAnimation}s, transform 0.3s ${timeAnimation}s`;
+      _subTitle.style.transition = `opacity 0.3s ${
+        timeAnimation + 0.3
+      }s, transform 0.3s ${timeAnimation + 0.3}s`;
+      _newSlide.style.transform = `translateX(${initPosX}%)`;
+      _activeSlide.style.zIndex = '0';
+      _newSlide.classList.add('langing-slider__slide-wrapper_active');
+      _activeSlide.classList.remove('langing-slider__slide-wrapper_active');
+      canAutoPlay.push(true);
+      setTimeout(() => {
+        canAutoPlay.pop();
+      }, 4000);
+      setTimeout(() => {
+        _newSlide.style.opacity = 1;
+        _overlay.style.transition = timeAnimation + 's';
+        _newSlide.style.transition = `transform ${timeAnimation}s, opacity .4s .1s`;
+        _newSlide.style.transform = `translateX(${0}%)`;
+        _overlay.style.opacity = '0.8';
+        setTimeout(() => {
+          _title.style = '';
+          _subTitle.style = '';
+          _overlay.style = '';
+          _newSlide.style = '';
+          _activeSlide.style = '';
+          ready = true;
+        }, timeAnimation * 1000);
+      }, 100);
+    }
+    (function initArrows() {
+      const _arrowLeft = document.querySelector('.langing-slider__arrow_left');
+      const _arrowRight = document.querySelector(
+        '.langing-slider__arrow_right'
+      );
+
+      _arrowLeft.addEventListener('click', () => {
+        if (!_arrowLeft.classList.contains('disabled-arrow_landing') && ready) {
+          activeIndex--;
+          changeActiveSlide(activeIndex, false);
+        }
+      });
+      _arrowRight.addEventListener('click', () => {
+        if (
+          !_arrowRight.classList.contains('disabled-arrow_landing') &&
+          ready
+        ) {
+          activeIndex++;
+          changeActiveSlide(activeIndex, true);
+        }
+      });
+      setArrows(0);
+    })();
+    function setArrows(index) {
+      const _arrowLeft = document.querySelector('.langing-slider__arrow_left');
+      const _arrowRight = document.querySelector(
+        '.langing-slider__arrow_right'
+      );
+      if (index > _langingSliderSlide.length - 2) {
+        _arrowRight.classList.add('disabled-arrow_landing');
+      } else {
+        _arrowRight.classList.remove('disabled-arrow_landing');
+      }
+      if (index < 1) {
+        _arrowLeft.classList.add('disabled-arrow_landing');
+      } else {
+        _arrowLeft.classList.remove('disabled-arrow_landing');
+      }
+    }
+    (function initSwipe() {
+      let startX = 0;
+      _langingSlider.addEventListener('touchstart', e => {
+        startX = e.targetTouches[0].clientX;
+      });
+      _langingSlider.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const deltaX = startX - endX;
+        if (Math.abs(deltaX) > 50 && ready) {
+          if (deltaX < 0 && activeIndex > 0) {
+            setTimeout(() => {
+              activeIndex--;
+              console.log(activeIndex);
+              changeActiveSlide(activeIndex, false);
+            }, 100);
+          }
+          if (deltaX > 0 && activeIndex < _langingSliderSlide.length - 1) {
+            setTimeout(() => {
+              activeIndex++;
+              console.log(activeIndex);
+              changeActiveSlide(activeIndex);
+            }, 100);
+          }
+        }
+      });
+    })();
+    (function initAutoPlay() {
+      setInterval(() => {
+        if (!canAutoPlay.length) {
+          activeIndex++;
+          if (activeIndex >= _langingSliderSlide.length) {
+            activeIndex = 0;
+          }
+          changeActiveSlide(activeIndex);
+        }
+      }, 5000);
+    })();
   })();
 
   (function initCatalogSlider() {
@@ -89,6 +247,9 @@ window.addEventListener('DOMContentLoaded', () => {
       // options
       cellAlign: 'center',
       contain: true
+    });
+    flktyCatalogSlider.on('change', function (index) {
+      setArrows(flktyCatalogSlider, _arrowLeft, _arrowRight);
     });
     setArrows(flktyCatalogSlider, _arrowLeft, _arrowRight);
     chengeNumber(0);
@@ -142,7 +303,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function initFilter(flickity, handler) {
-      console.log('ddd');
       const _radioButtons = document.querySelectorAll('.filters__hidden-input');
       const _catalogItems = document.querySelectorAll('.catalog-slide');
       const stateFilters = {
@@ -199,7 +359,6 @@ window.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // flickity.resize();
         flickity.select(0);
         flickity.reloadCells();
         handler();
@@ -221,6 +380,9 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       flktyCaseSlider.resize();
     }, 2000);
+    flktyCaseSlider.on('change', function (index) {
+      setArrows(flktyCaseSlider, [_arrowLeft], [_arrowRight]);
+    });
     setArrows(flktyCaseSlider, [_arrowLeft], [_arrowRight]);
     _arrowRight.addEventListener('click', () => {
       flktyCaseSlider.next();
@@ -254,28 +416,25 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
     (function initFullScreen() {
-      const _modalFullScreen = document.querySelector('.modal-full-screen');
+      const _modalFullScreenWrapper = document.querySelector(
+        '.case__gallery-wrapper'
+      );
       const _fullScreenButton = document.querySelector(
         '.case-gallery__full-screen'
       );
-      const _modalFullScreenClose = document.querySelector(
-        '.modal-full-screen__close'
+      const _fullScreenClose = document.querySelector(
+        '.case-gallery__full-screen-close'
       );
-      _modalFullScreenClose.addEventListener('click', () => {
-        _modalFullScreen.classList.remove('modal-full-screen_active');
-        document.body.classList.remove('no-scroll');
+      const _body = document.body;
+      _fullScreenClose.addEventListener('click', () => {
+        _modalFullScreenWrapper.classList.remove('is-fullscreen');
+        _body.classList.remove('no-scroll');
+        flktyCaseSlider.resize();
       });
-
       _fullScreenButton.addEventListener('click', () => {
-        const _selectedImg = document.querySelector(
-          '.case-gallery__slide.is-selected img'
-        );
-        const src = _selectedImg.getAttribute('src');
-        _modalFullScreen.classList.add('modal-full-screen_active');
-        document.body.classList.add('no-scroll');
-        _modalFullScreen.querySelector(
-          '.modal-full-screen__content'
-        ).style.backgroundImage = `url(${src})`;
+        _modalFullScreenWrapper.classList.add('is-fullscreen');
+        _body.classList.add('no-scroll');
+        flktyCaseSlider.resize();
       });
     })();
     function setCase(data, flkty) {
@@ -647,7 +806,15 @@ window.addEventListener('DOMContentLoaded', () => {
         div.innerHTML = this.count;
         div.append(title);
         div.addEventListener('click', () => {
-          div.classList.toggle('map__marker_active');
+          const isActive = div.classList.contains('map__marker_active');
+
+          const _markers = document.querySelectorAll('.map__marker');
+          _markers.forEach(item => {
+            item.classList.remove('map__marker_active');
+          });
+          if (!isActive) {
+            div.classList.add('map__marker_active');
+          }
         });
         var panes = this.getPanes();
         this.el = div;
@@ -816,7 +983,6 @@ window.addEventListener('DOMContentLoaded', () => {
   })();
   (function initMobileResize() {
     let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--fsvh', `${vh}px`);
   })();
   if (!isMobile) {
@@ -833,7 +999,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const _overlay = document.querySelectorAll('.langing-slider__overlay');
     window.addEventListener('scroll', () => {
       _parallaxBlocks.forEach((item, index) => {
-        item.style.transform = `translateY(${window.pageYOffset}px) scale(${
+        item.style.transform = `scale(${
           window.pageYOffset / windowHeight / 2 + 1
         })`;
         _overlay[index].style.opacity =

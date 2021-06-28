@@ -7,14 +7,12 @@
   width: 50%;
 }
 
-body .disabled-arrow {
-  // opacity: 0.4;
-  cursor: auto;
+body {
+  position: relative;
+}
 
-  // path {
-  //   fill: #010101;
-  //   fill-opacity: 0.4;
-  // }
+body .disabled-arrow {
+  cursor: auto;
 
   &:hover {
     background: #FFFFFF;
@@ -24,6 +22,19 @@ body .disabled-arrow {
       fill: #010101
     }
   }
+
+  &_landing {
+    cursor: auto;
+
+    &:hover {
+      background: none;
+
+      path {
+        fill: #fff;
+        fill-opacity: 0.4;
+      }
+    }
+  }
 }
 
 .loaded {
@@ -31,6 +42,8 @@ body .disabled-arrow {
     transform: translateY(-100%);
   }
 }
+
+
 
 
 .preloader {
@@ -387,7 +400,7 @@ section {
 
 .h2 {
   font-weight: 500;
-  font-size: rubber(80);
+  font-size: rubber(60);
   line-height: 110%;
   /* identical to box height, or 88px */
 
@@ -1001,7 +1014,7 @@ section {
   }
 
   .h2 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 
@@ -1081,7 +1094,7 @@ section {
   }
 
   .h2 {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .main-padding {
@@ -1237,6 +1250,24 @@ section {
     path {
       fill: #010101;
       fill-opacity: 0.1;
+    }
+
+    &_landing {
+      cursor: auto;
+
+      path {
+        fill: #fff;
+        fill-opacity: 0.4;
+      }
+
+      &:hover {
+        background: none;
+
+        path {
+          fill: #fff;
+          fill-opacity: 0.4;
+        }
+      }
     }
   }
 
@@ -1511,6 +1542,7 @@ section {
     }
 
     .h3 {
+      width: 130px;
       margin-left: 16px;
       align-self: flex-start;
     }
@@ -1518,7 +1550,7 @@ section {
     &__content {
       width: 100%;
       height: 100%;
-      padding-top: 60px;
+      padding-top: 70px;
     }
 
     &__close {
@@ -1562,7 +1594,11 @@ section {
 
   .modal-social {
     align-items: flex-start;
-    padding-top: 60px;
+    padding-top: 70px;
+
+    .h3 {
+      width: 100px;
+    }
 
     &__close {
       right: 16px;
